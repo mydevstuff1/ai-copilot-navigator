@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Nav Copilot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="screen-shell">
+      <div class="ui-frame">
+        <header class="topbar">
+          <div class="brand-wrap">
+            <div class="brand-mark">A</div>
+            <div class="brand-copy">
+              <h1>AI NAV COPILOT</h1>
+              <p>Your Co-Pilot • Safer Drives • Smarter Decisions</p>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <div class="live-pill"><span class="dot"></span> LIVE</div>
+            <div class="data-pill">CAM - FRONT</div>
+            <div class="gps-pill">
+              <span class="gps-icon">◉</span>
+              GPS
+            </div>
+            <div class="time-pill">
+              <span class="clock" id="clock">10:24 AM</span>
+            </div>
+          </div>
+        </header>
+
+        <main class="dashboard">
+          <section class="camera-panel panel-glow">
+            <div class="panel-header">
+              <div class="label-group">
+                <span class="icon cam-icon">◉</span>
+                <span>CAMERA VIEW</span>
+              </div>
+              <button class="park-btn">PARKED</button>
+            </div>
+
+            <div class="camera-scene">
+              <div class="scene-backdrop"></div>
+              <div class="scene-overlay grid-scan"></div>
+
+              <div class="camera-box">
+                <div class="box-corner tl"></div>
+                <div class="box-corner tr"></div>
+                <div class="box-corner bl"></div>
+                <div class="box-corner br"></div>
+              </div>
+
+              <div class="hazard-alert hazard-top">
+                <span class="alert-icon">!</span>
+                <div>
+                  <strong>Lane Departure</strong>
+                  <small>Right Lane</small>
+                  <em>0.8 km</em>
+                </div>
+              </div>
+
+              <div class="hazard-alert hazard-mid">
+                <span class="alert-icon">⚠</span>
+                <div>
+                  <strong>Blind Spot Alert</strong>
+                  <small>Vehicle in left blind spot</small>
+                  <em>12 m</em>
+                </div>
+              </div>
+
+              <div class="hazard-alert hazard-bottom">
+                <span class="alert-icon">◎</span>
+                <div>
+                  <strong>Traffic Light</strong>
+                  <small>Green</small>
+                  <em>480 m</em>
+                </div>
+              </div>
+
+              <div class="speed-readout">
+                <div class="ring"><span>78</span><small>km/h</small></div>
+              </div>
+
+              <div class="camera-controls">
+                <div class="control-stack">
+                  <button class="control-btn active">AR</button>
+                  <button class="control-btn">3D</button>
+                  <button class="control-btn">LAYERS</button>
+                  <button class="control-btn">SETTINGS</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="lower-grid">
+            <article class="map-card panel-glow">
+              <div class="mini-header">
+                <div class="nav-icon">↗</div>
+                <div class="mini-title">
+                  <h2>Navigation Preview</h2>
+                  <p>Plan your journey</p>
+                </div>
+              </div>
+
+              <div class="map-surface">
+                <div class="map-grid"></div>
+                <div class="route-line"></div>
+                <div class="route-pulse route-start"></div>
+                <div class="route-pulse route-end"></div>
+                <div class="map-zoom zoom-plus">+</div>
+                <div class="map-zoom zoom-minus">−</div>
+                <div class="destination-box">
+                  <div class="dest-icon">↗</div>
+                  <div class="dest-text">Your destination</div>
+                  <div class="dest-distance">— km</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="vehicle-card panel-glow">
+              <div class="mini-header alternate">
+                <div class="nav-icon vehicle-icon">◌</div>
+                <div class="mini-title">
+                  <h2>Vehicle Cockpit</h2>
+                  <p>Your vehicle at a glance</p>
+                </div>
+              </div>
+
+              <div class="vehicle-metrics">
+                <div class="metric-ring"><span>0</span><small>km/h</small></div>
+                <div class="metric-ring accent"><span>PRND</span></div>
+              </div>
+
+              <div class="info-grid">
+                <div class="info-box">
+                  <div class="mini-icn">▣</div>
+                  <div class="box-label">Battery</div>
+                  <div class="box-value">—</div>
+                </div>
+                <div class="info-box">
+                  <div class="mini-icn">◔</div>
+                  <div class="box-label">Vehicle Status</div>
+                  <div class="box-value ok">Parked</div>
+                </div>
+                <div class="info-box">
+                  <div class="mini-icn">◎</div>
+                  <div class="box-label">System Health</div>
+                  <div class="box-value ok">Normal</div>
+                </div>
+              </div>
+
+              <div class="status-footer">
+                <div class="vehicle-state">
+                  <span class="state-dot"></span>
+                  <div>
+                    <strong>Parked</strong>
+                    <small>Vehicle is stationary</small>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <nav class="quick-actions">
+            <button class="quick-card active">
+              <span class="qa-icon">✦</span>
+              <strong>AI Assistant</strong>
+              <small>Ask • Plan • Navigate</small>
+            </button>
+            <button class="quick-card">
+              <span class="qa-icon">⌖</span>
+              <strong>Live Maps</strong>
+              <small>2D / 3D / Satellite</small>
+            </button>
+            <button class="quick-card">
+              <span class="qa-icon">✓</span>
+              <strong>Driver Safety</strong>
+              <small>Alerts • Guidance • Assist</small>
+            </button>
+            <button class="quick-card">
+              <span class="qa-icon">⚙</span>
+              <strong>Settings</strong>
+              <small>Vehicle • AI • Display</small>
+            </button>
+          </nav>
+
+          <footer class="bottom-nav">
+            <button class="nav-item active">Home</button>
+            <button class="nav-item">Map</button>
+            <button class="nav-item">Camera</button>
+            <button class="nav-item">Vehicle</button>
+            <button class="nav-item">AI Assistant</button>
+            <button class="nav-item">More</button>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
